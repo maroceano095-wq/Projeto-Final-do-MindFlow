@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MindFlow: diário emocional, autorreflexão e pequenas conquistas.">
+  <title>✦ MindFlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcome" class="welcome-screen">
+    <div class="welcome-card">
+      <div class="logo-mark">✦</div>
+      <p class="kicker">DIÁRIO DE AUTORREFLEXÃO</p>
+      <h1>MindFlow</h1>
+      <p>Um pequeno espaço para organizar o que está dentro da sua cabeça.</p>
+      <form id="welcome-form">
+        <label for="name-input">Gostaria de nos dizer o seu nome?</label>
+        <input id="name-input" required maxlength="30" placeholder="Seu nome">
+        <button class="button primary" type="submit">COMEÇAR →</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="header">
+      <a class="brand" href="#inicio" data-page="inicio"><span class="logo-mark small">✦</span><span>MindFlow</span></a>
+      <div class="header-actions">
+        <button class="icon-button" data-page="configuracoes" title="Configurações">⚙</button>
+        <button class="icon-button" data-page="perfil" title="Perfil">◉</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section id="inicio" class="page active">
+        <div class="date-row"><span id="today"></span><span class="status-chip">✦ ONLINE</span></div>
+        <div class="hero-grid">
+          <section class="panel greeting-panel">
+            <p class="kicker">JORNADA DE AUTORREFLEXÃO</p>
+            <h2>Oi, <span id="home-name">aventureiro</span></h2>
+            <p>QUE BOM TER VOCÊ POR AQUI.</p>
+            <div class="streak"><span>✦</span><strong id="streak">0</strong><small>DIAS CUIDANDO<br>DE VOCÊ</small></div>
+          </section>
+          <section class="panel quest-panel">
+            <div class="quest-label">QUEST 01 <span>✦</span></div>
+            <h2>COMO VOCÊ ESTÁ?</h2>
+            <p>Não existe resposta certa. Só existe o que é verdadeiro para você agora.</p>
+            <button class="button primary" data-page="humor">REGISTRAR MEU HUMOR →</button>
+          </section>
+        </div>
+        <div class="home-grid">
+          <section class="panel tree-panel">
+            <div class="panel-title"><div><p class="kicker">ÁRVORE DAS EMOÇÕES</p><h3 id="level-name">NÍVEL 1 · SEMENTE</h3></div><span id="tree-icon" class="tree-icon">✦</span></div>
+            <div class="xp-row"><strong id="xp">0 XP</strong><span id="xp-next">50 XP para o próximo nível</span></div>
+            <div class="progress"><span id="xp-bar"></span></div>
+            <p>Cada pequeno registro é uma forma de se escutar.</p>
+            <div class="reward-row"><strong>+10 XP</strong><span>✦ <b id="missions-count">0</b> missões</span></div>
+          </section>
+          <section class="panel mission-panel">
+            <div class="quest-label">MISSÃO DO DIA <span>✦</span></div>
+            <h3 id="mission-title">Registrar seu humor</h3><p>+10 XP · opcional</p>
+            <button id="mission-button" class="button secondary">MARCAR COMO FEITA</button>
+          </section>
+          <section class="panel quote-panel"><p class="kicker">FRASE DO DIA</p><blockquote id="quote">“Um pequeno passo ainda é um passo.”</blockquote><button id="new-quote" class="text-button">OUTRA FRASE →</button></section>
+        </div>
+        <section class="panel quick-panel"><div class="panel-title"><h3>ACESSO RÁPIDO</h3><span>✦</span></div><div class="quick-actions"><button data-page="diario">📝 MEU DIÁRIO</button><button data-page="progresso">📊 MEU PROGRESSO</button><button data-page="reflexao">🌱 PAUSA PARA PENSAR</button><button data-page="pausa">◌ RESPIRAÇÃO</button></div></section>
+      </section>
+
+      <section id="humor" class="page">
+        <div class="page-heading"><p class="kicker">QUEST 01</p><h2>COMO VOCÊ ESTÁ?</h2><p>Não existe resposta certa. Só existe o que é verdadeiro para você agora.</p></div>
+        <section class="panel"><h3>ESCOLHA UM HUMOR</h3><div id="moods" class="mood-grid"></div></section>
+        <section id="mood-form-panel" class="panel hidden"><form id="mood-form" class="form-grid"><input type="hidden" id="selected-mood"><label>O que aconteceu hoje?<textarea id="mood-event" rows="3"></textarea></label><label>Quer contar um pouco mais?<textarea id="mood-more" rows="3"></textarea></label><label>Aconteceu alguma coisa boa?<textarea id="mood-good" rows="3"></textarea></label><label>O que mais ocupou sua cabeça?<textarea id="mood-thought" rows="3"></textarea></label><button class="button primary" type="submit">REGISTRAR →</button></form></section>
+      </section>
+
+      <section id="diario" class="page"><div class="page-heading"><p class="kicker">REGISTRO PESSOAL</p><h2>MEU DIÁRIO</h2><button class="button primary" id="new-entry">+ NOVA ENTRADA</button></div><section id="entry-form-panel" class="panel hidden"><form id="entry-form" class="form-grid"><div class="two-col"><label>Data<input type="date" id="entry-date" required></label><label>Hora<input type="time" id="entry-time" required></label></div><label>Humor<select id="entry-mood"></select></label><label>Título<input id="entry-title" required maxlength="80" placeholder="Um nome para este momento"></label><label>Texto<textarea id="entry-text" rows="7" required placeholder="Escreva o que quiser registrar..."></textarea></label><label>Tags<input id="entry-tags" placeholder="escola, descanso, família"></label><button class="button primary" type="submit">SALVAR ENTRADA ✦</button></form></section><section class="panel"><div class="panel-title"><h3>ENTRADAS ANTERIORES</h3><input id="entry-search" class="search" placeholder="Pesquisar"></div><div id="entries"></div></section></section>
+
+      <section id="historico" class="page"><div class="page-heading"><p class="kicker">MEMÓRIA DA JORNADA</p><h2>HISTÓRICO</h2></div><section class="panel"><div class="filters"><input type="date" id="history-date"><select id="history-mood"><option value="">Todos os humores</option></select><input id="history-tag" placeholder="Categoria"></div><div id="history-list"></div></section></section>
+
+      <section id="progresso" class="page"><div class="page-heading"><p class="kicker">STATUS DO JOGADOR</p><h2>MEU PROGRESSO</h2></div><section class="stats-grid"><div class="stat"><span>✦ XP TOTAL</span><strong id="stat-xp">0</strong></div><div class="stat"><span>🌱 NÍVEL</span><strong id="stat-level">1</strong></div><div class="stat"><span>📅 DIAS</span><strong id="stat-days">0</strong></div><div class="stat"><span>💭 HUMORES</span><strong id="stat-moods">0</strong></div><div class="stat"><span>📝 ENTRADAS</span><strong id="stat-entries">0</strong></div><div class="stat"><span>🏆 MISSÕES</span><strong id="stat-missions">0</strong></div></section><section class="panel"><h3>FREQUÊNCIA DOS HUMORES</h3><div id="mood-chart"></div></section></section>
+
+      <section id="reflexao" class="page"><div class="page-heading"><p class="kicker">QUEST DE REFLEXÃO</p><h2>PAUSA PARA PENSAR</h2></div><section class="panel reflection"><p id="reflection-question"></p><textarea id="reflection-answer" rows="5" placeholder="Escreva sua resposta ou apenas pense..."></textarea><div class="button-row"><button class="button primary" id="save-reflection">SALVAR · +10 XP</button><button class="button secondary" id="skip-reflection">PULAR</button></div></section><section class="panel"><div class="panel-title"><h3>PALAVRA DO DIA</h3><button id="favorite-word" class="icon-button">✦</button></div><p class="reference">Filipenses 4:13</p><p>“Tudo posso naquele que me fortalece.”</p><textarea id="word-note" rows="3" placeholder="Sua reflexão pessoal"></textarea><button class="button primary" id="save-word">SALVAR REFLEXÃO</button></section></section>
+
+      <section id="pausa" class="page"><div class="page-heading"><p class="kicker">MODO CALMO</p><h2>PAUSA</h2></div><section class="panel pause-panel"><div id="breath-orb">RESPIRA.</div><div class="duration-row"><button class="duration active" data-minutes="1">1 MIN</button><button class="duration" data-minutes="3">3 MIN</button><button class="duration" data-minutes="5">5 MIN</button></div><button class="button primary" id="start-breath">COMEÇAR PAUSA</button></section></section>
+
+      <section id="perfil" class="page"><div class="page-heading"><p class="kicker">STATUS DO JOGADOR</p><h2>MEU PERFIL</h2></div><section class="panel profile"><div id="profile-avatar" class="avatar">🌱</div><div><h3 id="profile-name">Seu nome</h3><p id="profile-level">NÍVEL 1 · SEMENTE</p></div></section><section class="stats-grid"><div class="stat"><span>✦ XP</span><strong id="profile-xp">0</strong></div><div class="stat"><span>📅 DIAS</span><strong id="profile-days">0</strong></div><div class="stat"><span>📝 ENTRADAS</span><strong id="profile-entries">0</strong></div><div class="stat"><span>🎯 MISSÕES</span><strong id="profile-missions">0</strong></div></section><section class="panel"><form id="profile-form" class="form-grid"><label>Nome<input id="profile-name-input"></label><label>Avatar<input id="profile-avatar-input" placeholder="🌱 ou ✦"></label><button class="button primary">SALVAR PERFIL</button></form></section></section>
+
+      <section id="configuracoes" class="page"><div class="page-heading"><p class="kicker">SISTEMA</p><h2>CONFIGURAÇÕES</h2></div><section class="panel settings"><label>Modo visual<select id="theme"><option value="light">Claro</option><option value="dark">Escuro</option></select></label><button class="button secondary" id="export-data">📤 EXPORTAR DADOS</button><button class="button danger" id="delete-data">🗑 APAGAR DADOS</button><button class="button danger" id="logout">🚪 DESLOGAR</button></section></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal"><button class="active" data-page="inicio">⌂<small>Início</small></button><button data-page="humor">♡<small>Humor</small></button><button data-page="diario">▤<small>Diário</small></button><button data-page="historico">◷<small>Histórico</small></button><button data-page="perfil">◉<small>Perfil</small></button></nav>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
