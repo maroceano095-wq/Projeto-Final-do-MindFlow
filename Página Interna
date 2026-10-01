@@ -1,43 +1,107 @@
-https://github.com/maroceano095-wq/Projeto-Final-do-MindFlow.git
+# MIND FLOW
 
-.ACESSE ESTE LINK  E SERA LEVADO PARA A PAGINA DO MINDFLOW NOSSO SITE.
-.LOGO APOS FAÇA O DAWLOUD DO PROJETO FINAL DO MIND FLOW, ABRA O ARQUIVO PELO VSCODE, INSTALE O LIVE SERVER
- .NO VSCODE CASO NA ESTEJE INSTALADO. CLICK COM O BOTAO DIREITO EM CIMA DO INDEX.HTML E CLICK NOVAMENTE EM OPEN WITH LIVE SERVER. LOGO APÓS
-.VOCE SERA MANDADO PARA UMA PAGINA NO GOOGLE CHROME.
+## Como acessar o projeto
 
-INFORMAÇÕES:
+1. **Acesse este link:**
+   https://github.com/maroceano095-wq/Projeto-Final-do-MindFlow.git
 
-1. PAGINA INICIAL (LOGIN)
+   Você será direcionado para a página do projeto MindFlow no GitHub.
 
-2. APRESENTAÇÃO DO APP PARA VOÇÊ, NELE CONTERA 
--REEGISTRE SEU HUMOR
--ARVORE DAS EMOÇÕES
--PALAVRA MOTIVACIONAL DO DIA
--
-E UM ACESSO RAPIDO.
--MEU DIARIO
--MEU PROGRESSO
--PAUSA PARA PENSAR
--RESPIRAÇÃO
+2. **Faça o download do projeto final do MindFlow.**
 
-SEU HUMOR:
+3. Abra a pasta do projeto pelo **Visual Studio Code (VS Code)**.
 
-1. ESCOLHA UMA DAS OPICOES: MUITO BEM, BEM, NORMAL, NAO TAO BEM, TRISTE, IRRITADO, MUITO MAL, CANSADO, SOBRECARREGADO.
-2. O QUE ACONTECEU HOJE? - QUER CONTAR UM POUCO MAIS? - ACONTECEU ALGUMA COISA BOA? - O QUE MAIS OCUPOU SUA CABEÇA?
+4. Caso o **Live Server** ainda não esteja instalado no VS Code, instale-o pela aba de extensões.
 
-MEU DIARIO:
+5. No VS Code, clique com o **botão direito** sobre o arquivo `index.html`.
 
-1. DATA: - HORA: - HUMOR: - TITULO: - TEXTO: - TAGS: - ENTRADAS ENTERIORES
+6. Selecione **"Open with Live Server"**.
 
-HISTÓRICO: 
+7. Logo após, o projeto será aberto automaticamente em uma página do **Google Chrome**.
 
-. SEUS REGISTROS ESTARAO NESTA AREA
+---
 
-MEU PERFIL:
+# INFORMAÇÕES DO APLICATIVO
 
-XP: 
-DIAS:
-ENTRADAS: 
-MISSOES:
-NOME: 
-AVATAR:
+## 1. Página inicial — Login
+
+A página inicial permite que o usuário faça login para acessar o MindFlow.
+
+---
+
+## 2. Apresentação do aplicativo
+
+Nesta página, serão apresentadas algumas das principais funcionalidades do MindFlow:
+
+* **Registre seu humor**
+* **Árvore das emoções**
+* **Palavra motivacional do dia**
+
+### Acesso rápido
+
+* **Meu Diário**
+* **Meu Progresso**
+* **Pausa para Pensar**
+* **Respiração**
+
+---
+
+# SEU HUMOR
+
+## 1. Escolha como você está se sentindo
+
+Escolha uma das opções:
+
+* Muito bem
+* Bem
+* Normal
+* Não tão bem
+* Triste
+* Irritado
+* Muito mal
+* Cansado
+* Sobrecarregado
+
+## 2. O que aconteceu hoje?
+
+**Quer contar um pouco mais?**
+
+* Aconteceu alguma coisa boa?
+* O que mais ocupou sua cabeça?
+* Como você está se sentindo hoje?
+
+---
+
+# MEU DIÁRIO
+
+### Informações da entrada
+
+* **Data:**
+* **Hora:**
+* **Humor:**
+* **Título:**
+* **Texto:**
+* **Tags:**
+
+### Entradas anteriores
+
+Aqui você poderá visualizar e consultar seus registros anteriores.
+
+---
+
+# HISTÓRICO
+
+**Seus registros estarão nesta área.**
+
+Aqui serão exibidas as entradas e os registros realizados ao longo do tempo.
+
+---
+
+# MEU PERFIL
+
+* **XP:**
+* **Dias:**
+* **Entradas:**
+* **Missões:**
+* **Nome:**
+* **Avatar:**
